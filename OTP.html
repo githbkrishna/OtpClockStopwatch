@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math object / otp generation</title>
+    <style>
+        body{
+            background: linear-gradient(to right,rgb(7, 66, 7), rgb(3, 3, 179));     
+        }
+        div{
+            text-align: center;
+            padding-top: 9rem;
+        }
+        h2{
+            text-transform: capitalize;
+            color: white;
+            font-size: 4vw;
+        }
+        button{
+            margin: 50px;
+            font-size: 30px;
+            font-size: 3vw;
+            padding: 1vw;
+            position: relative;
+            z-index: 11;
+        }
+        button::after{
+            content: "";
+            width: 100%;
+            height: 0%;
+            background-color: blue;
+            display: inline-block;
+            position: absolute;
+            bottom: 0%;
+            left: 0;
+            transition: all 3s;
+            z-index: -11;
+        }
+        button:hover::after{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        
+        <h2>open the console</h2>
+        
+        <button onclick="test()">Click</button>
+
+    </div>
+
+    <script>
+        function test() {
+
+            let otp = Math.floor(Math.random()* 9000 + 1000)
+
+            console.log(` This is your ${otp}`);
+
+            let check = prompt(` enter the otp from console`)
+
+            if (check == otp) {
+                alert("otp verification successfull")
+            } 
+            else if(check.length != 4){
+                alert("enter four digit otp");
+            }
+            else {
+                alert("otp verification failed")
+            }
+        }    
+    </script>
+</body>
+</html>
